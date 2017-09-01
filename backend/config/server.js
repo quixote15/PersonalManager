@@ -19,9 +19,9 @@ server.listen(port, function(){
     console.log(`backend running on port ${port}.`)
 });
 
-server.use(function(req,res,next){
-    res.send('Funcionou');
-})
+// server.use(function(req,res,next){
+//     res.send('Funcionou');
+// })
 
 
 module.exports = server

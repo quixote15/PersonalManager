@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
-    "production":"gulp --production"
+    "production": "gulp --production"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
     "angular-animate": "^1.6.6",
     "angular-toastr": "^2.1.1",
     "angular-ui-router": "^1.0.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",

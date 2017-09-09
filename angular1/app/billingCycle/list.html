@@ -1,0 +1,27 @@
+<div class="box-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Mês</th>
+        <th>Ano</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="billingCycle in billController.billingCycles">
+        <!-- This '::' is called one time bind and its useful to cut down the number of watchers on the app -->
+        <td>{{:: billingCycle.name }}</td>
+        <td>{{:: billingCycle.month }}</td>
+        <td>{{:: billingCycle.year }}</td>
+        <td style="width:100px;">
+          <button class="btn btn-warning" ng-click="billController.showTabUpdate(billingCycle)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" ng-click="billController.showTabDelete(billingCycle)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="box-footer clearfix">
+   <paginator url="/#!/billingCycles" pages="{{billController.pages}}"></paginator>
+</div>

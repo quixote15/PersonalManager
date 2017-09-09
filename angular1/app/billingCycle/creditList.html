@@ -1,0 +1,33 @@
+<div class="col-xs-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Valor</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="credit in billController.billingCycle.credits">
+        <td>
+          <input ng-model="credit.name" class="form-control" placeholder="Informe o Nome"
+            ng-readonly="billController.tabDelete" />
+        </td>
+        <td>
+          <input ng-model="credit.value" class="form-control" placeholder="Informe a Valor"
+            ng-readonly="billController.tabDelete" ng-change="billController.calculateValues()" type="number" />
+        </td>
+        <td style="width:150px;" ng-if="!billController.tabDelete">
+          <button class="btn btn-success" ng-click="billController.addCredit($index)"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning" ng-click="billController.cloneCredit($index,credit)"><i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger" ng-click="billController.deleteCredit($index)"><i class="fa fa-trash-o"></i></button>
+        </td>
+        <td style="width:150px;" ng-if="billController.tabDelete">
+          <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>
+          <button class="btn btn-warning disabled"><i class="fa fa-clone"></i></button>
+          <button class="btn btn-danger disabled"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

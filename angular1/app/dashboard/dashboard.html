@@ -1,0 +1,16 @@
+<!--This is a component created to be used along the app -->
+<content-header name="Dashboard" small="Versão {{ consts.version }}"></content-header>
+
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+  <div class="row"> <!--This row defines 3 valueBox Componentes -->
+  <!-- here we aply a angular filter to show only 2 decimal values after the point
+       dashboard.credit | number: 2 
+   -->
+   <value-box grid="4" color-class="bg-green" icon-class="fa fa-bank"
+      value="R$ {{ dashboard.credit | number: 2  }}" text="Total de Créditos"></value-box>
+    <value-box grid="4" color-class="bg-red" icon-class="fa fa-credit-card"
+      value="R$ {{ dashboard.debt | number: 2  }}" text="Total de Débitos"></value-box>
+    <value-box grid="4" color-class="bg-blue" icon-class="fa fa-money"
+      value="R$ {{ dashboard.total | number: 2  }}" text="Valor Consolidado"></value-box>
+  </div>
+</section>
